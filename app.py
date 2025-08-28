@@ -32,7 +32,7 @@ st.markdown("""
         margin-bottom: 1.5rem;
         font-weight: 700;
         padding: 1rem;
-        background: linear-gradient(90deg, #0E1117 0%, #1E293B 50%, #0E1117 100%);
+        background:linear-gradient(90deg,rgba(255, 140, 140, 1) 0%, rgba(240, 98, 96, 1) 100%);
         border-radius: 8px;
         border-bottom: 3px solid #FF4B4B;
     }
@@ -45,6 +45,7 @@ st.markdown("""
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         margin-bottom: 1.5rem;
         border-left: 4px solid #FF4B4B;
+        color: #333333;
     }
     
     /* Button styling */
@@ -67,30 +68,32 @@ st.markdown("""
     
     /* Secondary button */
     .secondary-btn {
-        background: linear-gradient(90deg, #1E293B 0%, #334155 100%) !important;
-        border: 1px solid #475569 !important;
+        background: linear-gradient(90deg, #FFCAC9 0%, #FFD5D4 100%) !important;
+        border: 1px solid #FFB6B5 !important;
+        color: #333333 !important;
     }
     
     /* File uploader styling */
     .uploadedFile {
-        background-color: #334155;
+        background-color: #FFD5D4;
         padding: 1rem;
         border-radius: 8px;
         margin-bottom: 0.8rem;
-        border: 1px solid #475569;
+        border: 1px solid #FFB6B5;
         display: flex;
         align-items: center;
         transition: all 0.2s ease;
+        color: #333333;
     }
     
     .uploadedFile:hover {
-        background-color: #475569;
+        background-color: #FFB6B5;
         transform: translateX(5px);
     }
     
     /* Sidebar styling */
     .css-1d391kg, .css-1v0mbdj {
-        background-color: #1E293B !important;
+        background-color: #FFCAC9 !important;
     }
     
     /* Progress bar */
@@ -100,48 +103,62 @@ st.markdown("""
     
     /* Radio buttons */
     .stRadio > div {
-        background-color: #1E293B;
+        background-color: #FFCAC9;
         padding: 1rem;
         border-radius: 8px;
+        color: #333333;
     }
     
     /* Footer */
     .footer {
         text-align: center;
         margin-top: 3rem;
-        color: #94A3B8;
+        color: #666666;
         font-size: 0.9rem;
         padding: 1rem;
-        border-top: 1px solid #334155;
+        border-top: 1px solid #FFD5D4;
     }
     
     /* File info cards */
     .file-info {
-        background-color: #334155;
+        background-color: #FFD5D4;
         padding: 0.8rem;
         border-radius: 8px;
         margin: 0.5rem 0;
         font-size: 0.9rem;
+        color: #333333;
     }
     
     /* Success message */
     .success-msg {
-        background-color: #064E3B;
-        color: #34D399;
+        background-color: #D4EDDA;
+        color: #155724;
         padding: 1rem;
         border-radius: 8px;
         margin: 1rem 0;
-        border-left: 4px solid #10B981;
+        border-left: 4px solid #28A745;
     }
     
     /* Warning message */
     .warning-msg {
-        background-color: #78350F;
-        color: #FBBF24;
+        background-color: #FFF3CD;
+        color: #856404;
         padding: 1rem;
         border-radius: 8px;
         margin: 1rem 0;
-        border-left: 4px solid #F59E0B;
+        border-left: 4px solid #FFC107;
+    }
+    
+    /* Adjust sidebar text color for better contrast */
+    .sidebar .sidebar-content {
+        color: #333333;
+    }
+    
+    /* Adjust info text in sidebar */
+    .stInfo {
+        background-color: #FFD5D4 !important;
+        color: #333333 !important;
+        border-left: 4px solid #FF4B4B !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -257,7 +274,7 @@ def main():
         st.markdown("---")
         st.markdown("### About")
         st.markdown("""
-        <div style="color: #94A3B8; font-size: 0.9rem;">
+        <div style="color: #333333; font-size: 0.9rem;">
         PDF Master Pro allows you to:
         - Merge multiple PDF files into one
         - Split PDFs into individual pages
@@ -321,9 +338,9 @@ def main():
                                 st.experimental_rerun()
             else:
                 st.markdown("""
-                <div style="background-color: #1E293B; padding: 2rem; border-radius: 12px; text-align: center;">
+                <div style="background-color: #FFCAC9; padding: 2rem; border-radius: 12px; text-align: center; color: #333333;">
                     <h3>No Files Selected</h3>
-                    <p style="color: #94A3B8;">Upload PDF files to begin merging</p>
+                    <p>Upload PDF files to begin merging</p>
                 </div>
                 """, unsafe_allow_html=True)
     
@@ -386,9 +403,9 @@ def main():
                     st.markdown('<div class="warning-msg">This PDF already has only one page. Splitting is not needed.</div>', unsafe_allow_html=True)
             else:
                 st.markdown("""
-                <div style="background-color: #1E293B; padding: 2rem; border-radius: 12px; text-align: center;">
+                <div style="background-color: #FFCAC9; padding: 2rem; border-radius: 12px; text-align: center; color: #333333;">
                     <h3>No File Selected</h3>
-                    <p style="color: #94A3B8;">Upload a PDF file to begin splitting</p>
+                    <p>Upload a PDF file to begin splitting</p>
                 </div>
                 """, unsafe_allow_html=True)
     
@@ -403,4 +420,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
