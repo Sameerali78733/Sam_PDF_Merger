@@ -39,7 +39,7 @@ st.markdown("""
     
     /* Card styling */
     .card {
-        background-color: #1E293B;
+        background-color: #FFCAC9;
         padding: 1.5rem;
         border-radius: 12px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -403,3 +403,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
